@@ -2,7 +2,7 @@
 
 ### Overview
 
-This repository will start a distributed redis cluster using docker-compose for high availability. The redis instances listen on the host node ports: 6379-6384. There are 3 master nodes and 3 replica nodes. If you are running a local Docker Swarm you can run the entire cluster of 6 nodes locally.
+This repository will start a distributed 6-node Redis Cluster using Docker Swarm with Docker Compose and Supervisor for high availability. The redis instances listen on the host node ports: 6379-6384. There are 3 master nodes and 3 replica nodes. If you are running a local Docker Swarm you can run the entire 6-node cluster locally.
 
 ### How to Install
 
