@@ -9,13 +9,13 @@ This repository will start a distributed 6-node Redis Cluster using Docker Swarm
 1. Make sure Swarm is installed 
 
   ```
-  private-docker-redis-cluster $ sudo ./1_install_core.sh
+  docker-redis-cluster $ sudo ./1_install_core.sh
   ```
 
 1. Restart the local consul, docker daemon, swarm manager, and swarm join
 
   ```
-  private-docker-redis-cluster $ sudo ./boot_local_docker_services.sh
+  docker-redis-cluster $ sudo ./boot_local_docker_services.sh
   ``` 
 
 1. Point to the Docker Swarm
@@ -76,7 +76,7 @@ $
 1. Start the Redis Cluster
 
   ```
-  private-docker-redis-cluster $ ./start_cluster.sh 
+  docker-redis-cluster $ ./start_cluster.sh 
   Starting the Cluster on Docker Swarm
   Creating redismaster1
   Creating redismaster3
@@ -85,7 +85,7 @@ $
   Creating redisreplica2
   Creating redisreplica3
   Done
-  private-docker-redis-cluster $
+  docker-redis-cluster $
   ```
 
 1. Confirm the Containers are running
