@@ -1,4 +1,4 @@
-## A Distributed Redis Cluster with Docker-Compose
+## A Distributed Redis Cluster using Docker Swarm, Docker Compose, and Supervisor
 
 ### Overview
 
@@ -9,13 +9,13 @@ This repository will start a distributed redis cluster using docker-compose for 
 1. Make sure Swarm is installed 
 
   ```
-  docker-redis-cluster $ sudo ./1_install_core.sh
+  private-docker-redis-cluster $ sudo ./1_install_core.sh
   ```
 
 1. Restart the local consul, docker daemon, swarm manager, and swarm join
 
   ```
-  docker-redis-cluster $ sudo ./boot_local_docker_services.sh
+  private-docker-redis-cluster $ sudo ./boot_local_docker_services.sh
   ``` 
 
 1. Point to the Docker Swarm
@@ -76,7 +76,7 @@ $
 1. Start the Redis Cluster
 
   ```
-  docker-redis-cluster $ ./start_cluster.sh 
+  private-docker-redis-cluster $ ./start_cluster.sh 
   Starting the Cluster on Docker Swarm
   Creating redismaster1
   Creating redismaster3
@@ -85,7 +85,7 @@ $
   Creating redisreplica2
   Creating redisreplica3
   Done
-  docker-redis-cluster $
+  private-docker-redis-cluster $
   ```
 
 1. Confirm the Containers are running

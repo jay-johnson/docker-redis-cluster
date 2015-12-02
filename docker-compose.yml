@@ -1,0 +1,108 @@
+redismaster1:
+  image: jayjohnson/redis-clusterable
+  container_name: "redismaster1"
+  hostname: "redismaster1"
+  environment:
+    - NODESUPERVISORNAME=redis-master-1
+    - REDISNODENAME=redismaster1
+    - REDISNODEPORT=6379
+    - REDISNODEREPLICAS=redismaster1:6379 redismaster2:6379 redismaster3:6379 redisreplica1:6379 redisreplica2:6379 redisreplica3:6379
+  ports:
+    - "6379:6379"
+    - "16379:16379"
+    - "26379:26379"
+  cap_add:
+    - ALL
+    - NET_ADMIN
+    - SYS_ADMIN
+
+redismaster2:
+  image: jayjohnson/redis-clusterable
+  container_name: "redismaster2"
+  hostname: "redismaster2"
+  environment:
+    - NODESUPERVISORNAME=redis-master-2
+    - REDISNODENAME=redismaster2
+    - REDISNODEPORT=6380
+    - REDISNODEREPLICAS=redismaster1:6379 redismaster2:6379 redismaster3:6379 redisreplica1:6379 redisreplica2:6379 redisreplica3:6379
+  ports:
+    - "6380:6379"
+    - "16380:16379"
+    - "26380:26379"
+  cap_add:
+    - ALL
+    - NET_ADMIN
+    - SYS_ADMIN
+
+redismaster3:
+  image: jayjohnson/redis-clusterable
+  container_name: "redismaster3"
+  hostname: "redismaster3"
+  environment:
+    - NODESUPERVISORNAME=redis-master-3
+    - REDISNODENAME=redismaster3
+    - REDISNODEPORT=6381
+    - REDISNODEREPLICAS=redismaster1:6379 redismaster2:6379 redismaster3:6379 redisreplica1:6379 redisreplica2:6379 redisreplica3:6379
+  ports:
+    - "6381:6379"
+    - "16381:16379"
+    - "26381:26379"
+  cap_add:
+    - ALL
+    - NET_ADMIN
+    - SYS_ADMIN
+
+redisreplica1:
+  image: jayjohnson/redis-clusterable
+  container_name: "redisreplica1"
+  hostname: "redisreplica1"
+  environment:
+    - NODESUPERVISORNAME=redis-replica-1
+    - REDISNODENAME=redisreplica1
+    - REDISNODEPORT=6382
+    - REDISNODEREPLICAS=redismaster1:6379 redismaster2:6379 redismaster3:6379 redisreplica1:6379 redisreplica2:6379 redisreplica3:6379
+  ports:
+    - "6382:6379"
+    - "16382:16379"
+    - "26382:26379"
+  cap_add:
+    - ALL
+    - NET_ADMIN
+    - SYS_ADMIN
+
+redisreplica2:
+  image: jayjohnson/redis-clusterable
+  container_name: "redisreplica2"
+  hostname: "redisreplica2"
+  environment:
+    - NODESUPERVISORNAME=redis-replica-2
+    - REDISNODENAME=redisreplica2
+    - REDISNODEPORT=6381
+    - REDISNODEREPLICAS=redismaster1:6379 redismaster2:6379 redismaster3:6379 redisreplica1:6379 redisreplica2:6379 redisreplica3:6379
+  ports:
+    - "6383:6379"
+    - "16383:16379"
+    - "26383:26379"
+  cap_add:
+    - ALL
+    - NET_ADMIN
+    - SYS_ADMIN
+
+redisreplica3:
+  image: jayjohnson/redis-clusterable
+  container_name: "redisreplica3"
+  hostname: "redisreplica3"
+  environment:
+    - NODESUPERVISORNAME=redis-replica-3
+    - REDISNODENAME=redisreplica3
+    - REDISNODEPORT=6381
+    - REDISNODEREPLICAS=redismaster1:6379 redismaster2:6379 redismaster3:6379 redisreplica1:6379 redisreplica2:6379 redisreplica3:6379
+  ports:
+    - "6384:6379"
+    - "16384:16379"
+    - "26384:26379"
+  cap_add:
+    - ALL
+    - NET_ADMIN
+    - SYS_ADMIN
+
