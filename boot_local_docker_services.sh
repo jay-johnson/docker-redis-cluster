@@ -11,7 +11,7 @@ kill -9 $consulpid $dockerpid $swarmmanpid $swarmjoinpid
 echo ""
 echo "Starting Consul"
 pushd consul >> /dev/null
-./restart_consul
+./restart_consul.sh
 popd >> /dev/null
 
 echo "Waiting on consul to start"
