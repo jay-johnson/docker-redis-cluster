@@ -22,6 +22,8 @@ pushd docker >> /dev/null
 ./start_docker_daemon.sh
 popd >> /dev/null
 
+echo "Waiting on docker daemon to start"
+sleep 2
 echo "Starting Swarm Manager"
 pushd swarm >> /dev/null
 ./restart_single_swarm_manager.sh
